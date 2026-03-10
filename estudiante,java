@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+
+public class Estudiante {
+
+    // Atributos
+    private String nombre;
+    private int edad;
+    private String carrera;
+    private ArrayList<String> materias;
+
+    // Constructor
+    public Estudiante(String nombre, int edad, String carrera) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.carrera = carrera;
+        this.materias = new ArrayList<>();
+    }
+
+    // Materia
+    public void inscribirMateria(String materia) {
+        materias.add(materia);
+        System.out.println(nombre + " se inscribió en " + materia);
+    }
+
+    // Método para presentarse
+    public void presentarse() {
+        System.out.println("Hola, soy " + nombre);
+        System.out.println("Tengo " + edad + " años");
+        System.out.println("Estudio " + carrera);
+        System.out.println("Materias inscritas: " + materias.size());
+    }
+
+    // Método estudiar
+    public void estudiar(int horas) {
+        System.out.println(nombre + " estudió " + horas + " horas");
+    }
+
+    // Método principal
+    public static void main(String[] args) {
+
+        // Datos
+        Estudiante julian = new Estudiante("Julian Urquijo", 19, "Ing. Telematica");
+
+        // Presentarse
+        julian.presentarse();
+
+        System.out.println("---");
+
+        // Inscribir 
+        julian.inscribirMateria("Programación Orientada a Objetos");
+        julian.inscribirMateria("Redes");
+        julian.inscribirMateria("Matemáticas");
+
+        System.out.println("---");
+
+        // Usar método estudiar
+        julian.estudiar(3);
+    }
+}
